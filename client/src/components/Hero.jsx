@@ -1,29 +1,55 @@
 function Hero() {
   return (
     <section className="hero">
+
       <div className="container hero-container">
 
-        <div className="hero-text">
+        <div className="hero-content">
+
+          <span className="hero-tag">
+            Trusted Healthcare Platform
+          </span>
 
           <h1>
-            Find Trusted Doctors &
-            <span> Book Appointments Easily</span>
+            Book Appointments
+            <br />
+            With Trusted Doctors
           </h1>
 
           <p>
-            Connect with experienced healthcare professionals
-            and schedule appointments in just a few clicks.
+            Find experienced doctors, compare specialists,
+            choose your preferred time slot and book
+            appointments within minutes.
           </p>
 
           <div className="hero-buttons">
 
-            <button className="btn btn-primary">
+            <button className="primary-btn">
               Book Appointment
             </button>
 
-            <button className="btn btn-outline">
+            <button className="secondary-btn">
               Explore Doctors
             </button>
+
+          </div>
+
+          <div className="hero-stats">
+
+            <div>
+              <h2>120+</h2>
+              <span>Doctors</span>
+            </div>
+
+            <div>
+              <h2>50K+</h2>
+              <span>Patients</span>
+            </div>
+
+            <div>
+              <h2>24/7</h2>
+              <span>Support</span>
+            </div>
 
           </div>
 
@@ -32,13 +58,14 @@ function Hero() {
         <div className="hero-image">
 
           <img
-            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900"
-            alt="Hospital"
+            src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=900"
+            alt="Doctor"
           />
 
         </div>
 
       </div>
+
     </section>
   );
 }
