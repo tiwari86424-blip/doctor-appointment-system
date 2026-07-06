@@ -10,19 +10,11 @@ function App() {
   return (
     <>
       <Navbar />
-
-      <main>
-        <Hero />
-
-        <Stats />
-
-        <WhyUs />
-
-        <DoctorGrid />
-
-        <AppointmentList />
-      </main>
-
+      <Hero />
+      <Stats />
+      <WhyUs />
+      <DoctorGrid  onBook={() => {}}/>
+      <AppointmentList />
       <Footer />
     </>
   );

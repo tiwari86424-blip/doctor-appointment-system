@@ -1,19 +1,76 @@
-function DoctorGrid() {
+import { useMemo, useState } from "react";
+import DoctorCard from "./DoctorCard";
+import { doctors } from "../data/doctors";
+
+function DoctorGrid({ onBook }) {
+  const [search, setSearch] = useState("");
+  const [selectedSpecialty, setSelectedSpecialty] = useState("All");
+
+  const specialties = [
+    "All",
+    ...new Set(doctors.map((doctor) => doctor.specialty)),
+  ];
+
+  const filteredDoctors = useMemo(() => {
+    return doctors.filter((doctor) => {
+      const matchesName = doctor.name
+        .toLowerCase()
+        .includes(search.toLowerCase());
+
+      const matchesSpecialty =
+        selectedSpecialty === "All" ||
+        doctor.specialty === selectedSpecialty;
+
+      return matchesName && matchesSpecialty;
+    });
+  }, [search, selectedSpecialty]);
+
   return (
-    <section id="doctors">
+    <section className="doctor-section" id="doctors">
       <div className="container">
 
-        <h2 className="section-title">
-          Our Doctors
-        </h2>
+        <div className="section-heading">
+          <h2>Our Specialists</h2>
+          <p>
+            Find experienced doctors and book appointments
+            in just a few clicks.
+          </p>
+        </div>
 
-        <p className="section-subtitle">
-          Experienced specialists are available for your healthcare needs.
-        </p>
+        <div className="search-box">
+          <input
+            type="text"
+            placeholder="Search doctors..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </div>
 
-        <h3 style={{ textAlign: "center" }}>
-          Doctor cards coming next...
-        </h3>
+        <div className="filter-row">
+          {specialties.map((item) => (
+            <button
+              key={item}
+              className={
+                selectedSpecialty === item
+                  ? "filter-btn active-filter"
+                  : "filter-btn"
+              }
+              onClick={() => setSelectedSpecialty(item)}
+            >
+              {item}
+            </button>
+          ))}
+        </div>
+
+        <div className="doctor-grid">
+          {filteredDoctors.map((doctor) => (
+            <DoctorCard
+              key={doctor.id}
+              doctor={doctor}
+              onBook={onBook}
+            />
+          ))}
+        </div>
 
       </div>
     </section>
