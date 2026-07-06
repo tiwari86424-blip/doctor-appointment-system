@@ -53,7 +53,6 @@ body {
 }
 .nav-links li:hover{
     color:#2563eb;
-    transform:scale(1.15);
 }
 .login-btn{
   background:#2563eb;
@@ -67,4 +66,39 @@ body {
 }
 .login-btn:hover{
 background-color: #1d4ed8;
+}
+.why-us{
+    padding:80px 60px;
+    text-align:center;
+}
+.cards{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    margin-top:40px;
+}
+.card{
+
+    background:white;
+
+    padding:25px;
+
+    width:300px;
+
+    border-radius:10px;
+
+    border:1px solid #ddd;
+
+    transition:0.3s;
+}
+.card:hover{
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+
+  transform: scale(1.05);
+
 }
