@@ -22,6 +22,7 @@ body {
 
 .nav-links li {
   cursor: pointer;
+  transition:0.3s;
 }
 
 .hero {
@@ -46,4 +47,24 @@ body {
   padding: 15px 30px;
   border-radius: 8px;
   cursor: pointer;
+}
+.logo{
+  color:#2563eb;
+}
+.nav-links li:hover{
+    color:#2563eb;
+    transform:scale(1.15);
+}
+.login-btn{
+  background:#2563eb;
+  color:white;
+  border:none;
+  padding:10px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:0.3s;
+
+}
+.login-btn:hover{
+background-color: #1d4ed8;
 }
