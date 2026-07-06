@@ -1,90 +1,86 @@
 import {
-    FaUserMd,
-    FaCalendarCheck,
-    FaHeadset,
-    FaShieldAlt
+  FaUserMd,
+  FaCalendarCheck,
+  FaShieldAlt,
+  FaHeadset
 } from "react-icons/fa";
 
 function WhyUs() {
 
-    const features = [
+  const features = [
+    {
+      icon: <FaUserMd />,
+      title: "Experienced Doctors",
+      description:
+        "Consult highly qualified specialists with years of experience across multiple medical fields."
+    },
+    {
+      icon: <FaCalendarCheck />,
+      title: "Easy Appointment Booking",
+      description:
+        "Book your preferred doctor in just a few clicks with an intuitive appointment system."
+    },
+    {
+      icon: <FaShieldAlt />,
+      title: "Trusted Healthcare",
+      description:
+        "Your medical information stays secure while you receive quality healthcare services."
+    },
+    {
+      icon: <FaHeadset />,
+      title: "24×7 Patient Support",
+      description:
+        "Need help? Our support team is available round the clock to assist you."
+    }
+  ];
 
-        {
-            icon: <FaUserMd />,
-            title: "Qualified Doctors",
-            text: "Experienced specialists across multiple healthcare departments."
-        },
+  return (
+    <section
+      className="why-section"
+      id="whyus"
+    >
 
-        {
-            icon: <FaCalendarCheck />,
-            title: "Easy Booking",
-            text: "Book appointments within minutes using a simple interface."
-        },
+      <div className="container">
 
-        {
-            icon: <FaShieldAlt />,
-            title: "Trusted Care",
-            text: "Safe and reliable healthcare services for every patient."
-        },
+        <h2 className="section-title">
+          Why Choose HealthCare+
+        </h2>
 
-        {
-            icon: <FaHeadset />,
-            title: "24/7 Support",
-            text: "Our support team is available whenever you need assistance."
-        }
+        <p className="section-subtitle">
+          We make healthcare accessible, reliable and convenient for every patient.
+        </p>
 
-    ]
+        <div className="why-grid">
 
-    return (
+          {features.map((feature) => (
 
-        <section
-            id="whyus"
-            className="why-us"
-        >
+            <div
+              className="why-card"
+              key={feature.title}
+            >
 
-            <div className="container">
+              <div className="why-icon">
+                {feature.icon}
+              </div>
 
-                <h2 className="section-title">
-                    Why Choose Us
-                </h2>
+              <h3>
+                {feature.title}
+              </h3>
 
-                <p className="section-subtitle">
-                    Healthcare made simple, accessible and reliable.
-                </p>
-
-                <div className="why-grid">
-
-                    {features.map((item) => (
-
-                        <div
-                            className="why-card"
-                            key={item.title}
-                        >
-
-                            <div className="why-icon">
-                                {item.icon}
-                            </div>
-
-                            <h3>
-                                {item.title}
-                            </h3>
-
-                            <p>
-                                {item.text}
-                            </p>
-
-                        </div>
-
-                    ))}
-
-                </div>
+              <p>
+                {feature.description}
+              </p>
 
             </div>
 
-        </section>
+          ))}
 
-    )
+        </div>
 
+      </div>
+
+    </section>
+  );
 }
 
-export default WhyUs
+export default WhyUs;
