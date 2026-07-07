@@ -5,6 +5,8 @@ import Hero from "./components/Hero";
 import Stats from "./components/Stats";
 import WhyUs from "./components/WhyUs";
 import DoctorGrid from "./components/DoctorGrid";
+import Testimonials from "./components/Testimonials";
+import FAQ from "./components/FAQ";
 import AppointmentList from "./components/AppointmentList";
 import BookingModal from "./components/BookingModal";
 import LoginModal from "./components/LoginModal";
@@ -48,6 +50,8 @@ function App() {
       <DoctorGrid
         onBook={(doctor) => setSelectedDoctor(doctor)}
       />
+      <Testimonials />
+      <FAQ />
 
       <AppointmentList
         appointments={appointments}
