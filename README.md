@@ -1,16 +1,52 @@
-# doctor-appointment-system
+# 🏥 HealthCare+
 
-## Problem Statement
-Patients often face difficulties in scheduling doctor appointments through traditional methods such as phone calls or in-person visits. This project aims to provide a centralized platform where patients can browse doctors, book appointments, and manage their bookings efficiently.
+A modern, responsive healthcare appointment booking frontend built using **React** and **Vite**.
 
-## Planned Tech Stack
+## ✨ Features
+
+- Responsive healthcare UI
+- Sticky navigation bar
+- Doctor search and specialty filters
+- Appointment booking modal
+- Login modal (frontend demo)
+- Testimonials section
+- FAQ section
+- My Appointments section
+- Responsive footer
+- Mobile-friendly design
+
+## 🛠 Tech Stack
 
 - React
-- Node.js
-- Express.js
-- MySQL
-- Git & GitHub
+- Vite
+- JavaScript
+- CSS
+- React Icons
 
-## Current Status
+## 🚀 Run Locally
 
-Project initialization.
+```bash
+git clone https://github.com/tiwari86424-blip/healthcare-plus.git
+
+cd healthcare-plus/client
+
+npm install
+
+npm run dev
+```
+
+## 🌐 Live Demo
+
+healthcare-plus-mu.vercel.app
+
+## 📌 Future Improvements
+
+- Node.js backend
+- Express.js APIs
+- MySQL database
+- Authentication
+- Doctor/Admin dashboard
+
+## 👩‍💻 Author
+
+**Khushi Tiwari**
