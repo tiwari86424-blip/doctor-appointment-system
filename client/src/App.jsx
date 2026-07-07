@@ -1,20 +1,63 @@
+import { useState } from "react";
+
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Stats from "./components/Stats";
 import WhyUs from "./components/WhyUs";
 import DoctorGrid from "./components/DoctorGrid";
 import AppointmentList from "./components/AppointmentList";
+import BookingModal from "./components/BookingModal";
 import Footer from "./components/Footer";
 
 function App() {
+  const [selectedDoctor, setSelectedDoctor] = useState(null);
+  const [appointments, setAppointments] = useState([]);
+
+  const bookAppointment = (doctor, date, time) => {
+    const newAppointment = {
+      id: Date.now(),
+      doctor,
+      date,
+      time,
+    };
+
+    setAppointments((prev) => [...prev, newAppointment]);
+    setSelectedDoctor(null);
+  };
+
+  const cancelAppointment = (id) => {
+    setAppointments((prev) =>
+      prev.filter((appointment) => appointment.id !== id)
+    );
+  };
+
   return (
     <>
       <Navbar />
+
       <Hero />
+
       <Stats />
+
       <WhyUs />
-      <DoctorGrid  onBook={() => {}}/>
-      <AppointmentList />
+
+      <DoctorGrid
+        onBook={(doctor) => setSelectedDoctor(doctor)}
+      />
+
+      <AppointmentList
+        appointments={appointments}
+        onCancel={cancelAppointment}
+      />
+
+      {selectedDoctor && (
+        <BookingModal
+          doctor={selectedDoctor}
+          onClose={() => setSelectedDoctor(null)}
+          onConfirm={bookAppointment}
+        />
+      )}
+
       <Footer />
     </>
   );
