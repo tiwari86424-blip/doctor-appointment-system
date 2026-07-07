@@ -7,11 +7,13 @@ import WhyUs from "./components/WhyUs";
 import DoctorGrid from "./components/DoctorGrid";
 import AppointmentList from "./components/AppointmentList";
 import BookingModal from "./components/BookingModal";
+import LoginModal from "./components/LoginModal";
 import Footer from "./components/Footer";
 
 function App() {
   const [selectedDoctor, setSelectedDoctor] = useState(null);
   const [appointments, setAppointments] = useState([]);
+  const [showLogin, setShowLogin] = useState(false);
 
   const bookAppointment = (doctor, date, time) => {
   console.log("BOOKING:", doctor, date, time);
@@ -35,7 +37,7 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar onLogin={() => setShowLogin(true)} />
 
       <Hero />
 
@@ -60,6 +62,12 @@ function App() {
           
         />
       )}
+
+      {showLogin && (
+  <LoginModal
+    onClose={() => setShowLogin(false)}
+  />
+)}
 
       <Footer />
     </>

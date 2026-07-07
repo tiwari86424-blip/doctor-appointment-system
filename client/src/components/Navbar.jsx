@@ -1,32 +1,46 @@
 import { useState } from "react";
-import { FaBars, FaTimes, FaUserCircle } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 
-function Navbar() {
+function Navbar({ onLogin }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const closeMenu = () => setMenuOpen(false);
-
   return (
-    <header className="navbar">
+    <nav className="navbar">
+
       <div className="container nav-container">
 
-        <a href="#" className="logo">
-          <span className="logo-icon">+</span>
-          <span className="logo-text">HealthCare+</span>
-        </a>
+        <h2 className="logo">HealthCare+</h2>
 
-        <nav className={menuOpen ? "nav-links active" : "nav-links"}>
-          <a href="#" onClick={closeMenu}>Home</a>
-          <a href="#doctors" onClick={closeMenu}>Doctors</a>
-          <a href="#whyus" onClick={closeMenu}>Why Us</a>
-          <a href="#appointments" onClick={closeMenu}>Appointments</a>
-          <a href="#footer" onClick={closeMenu}>Contact</a>
+        <ul className={menuOpen ? "nav-links active" : "nav-links"}>
+          <li>
+            <a href="#">Home</a>
+          </li>
 
-          <button className="login-btn">
-            <FaUserCircle />
-            Login
-          </button>
-        </nav>
+          <li>
+            <a href="#doctors">Doctors</a>
+          </li>
+
+          <li>
+            <a href="#why-us">Why Us</a>
+          </li>
+
+          <li>
+            <a href="#appointments">Appointments</a>
+          </li>
+
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+
+          <li>
+            <button
+              className="login-nav-btn"
+              onClick={onLogin}
+            >
+              Login
+            </button>
+          </li>
+        </ul>
 
         <button
           className="menu-btn"
@@ -36,7 +50,8 @@ function Navbar() {
         </button>
 
       </div>
-    </header>
+
+    </nav>
   );
 }
 
