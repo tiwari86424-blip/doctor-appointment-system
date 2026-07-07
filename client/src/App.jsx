@@ -14,16 +14,18 @@ function App() {
   const [appointments, setAppointments] = useState([]);
 
   const bookAppointment = (doctor, date, time) => {
-    const newAppointment = {
-      id: Date.now(),
-      doctor,
-      date,
-      time,
-    };
+  console.log("BOOKING:", doctor, date, time);
 
-    setAppointments((prev) => [...prev, newAppointment]);
-    setSelectedDoctor(null);
+  const newAppointment = {
+    id: Date.now(),
+    doctor,
+    date,
+    time,
   };
+
+  setAppointments((prev) => [...prev, newAppointment]);
+  setSelectedDoctor(null);
+};
 
   const cancelAppointment = (id) => {
     setAppointments((prev) =>
@@ -55,6 +57,7 @@ function App() {
           doctor={selectedDoctor}
           onClose={() => setSelectedDoctor(null)}
           onConfirm={bookAppointment}
+          
         />
       )}
 
